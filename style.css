@@ -14,6 +14,7 @@ header{
     position: absolute;
     top: -20vh;
     z-index: -1;
+    opacity: 0.5;
 
 
 }
@@ -48,4 +49,46 @@ header{
     margin-top: 7vh;
     align-items: center;
 
+}
+.logo{
+    width:30vw ;
+    color: #a78f36;
+    font-size: 5rem;
+
+}
+.head h3{
+    font-size:2.1em ;
+    color: black;
+    font-weight:lighter ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.search{
+    display: flex;
+    width: 40vw;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px 0;
+
+}
+.search input{
+    outline: none;
+    border: none;
+    width: 50%;
+    padding-left: 10px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+.search p {
+    color: black;
+    border-right: 1px solid black;
+    font-size: 15px;
+    padding-right: 10px;
+    margin-left: 6px;
+}
+.search i {
+    margin-left: 10px;
+    padding-left: 10px;
 }

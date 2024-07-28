@@ -1,0 +1,22 @@
+.header ul {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+
+}
+.header ul li{
+    list-style: none;
+    margin: 2px 12px;
+}
+.logo{
+    height: 16px;
+    width: 16px;
+}
+.logo img{
+    height: 10vh;
+}
+.usnd{
+    text-decoration:underline;
+
+
+}

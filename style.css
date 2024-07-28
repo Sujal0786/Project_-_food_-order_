@@ -1,3 +1,6 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+DK+Loopet&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+DK+Loopet&family=Zeyada&display=swap');
 body{
     margin: 0;
     padding: 0;
@@ -60,9 +63,14 @@ header{
     font-size: 5rem;
 
 }
+
 .lg-centre{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 3rem;
+    font-family: "Zeyada", cursive;
+  font-weight: 1000;
+    /* font-family: "Great Vibes", cursive; */
+    /* font-family: "Playwrite AT", cursive; */
+    font-optical-sizing: auto;
+    font-size: 4rem;
     color: red;
 }
 .head h3{

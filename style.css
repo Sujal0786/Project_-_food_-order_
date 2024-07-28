@@ -5,16 +5,17 @@ body{
 }
 header{
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     overflow: hidden;
     position: relative;
     object-fit: cover;
+    margin-bottom: 10vh;
 }
 .header-img{
     position: absolute;
-    top: -20vh;
+    top: 10vh;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.2;
 
 
 }
@@ -30,6 +31,9 @@ header{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
 
+}
+.lg img {
+    width: 16%;
 }
 .nav-br{
     display: flex;
@@ -56,6 +60,11 @@ header{
     font-size: 5rem;
 
 }
+.lg-centre{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3rem;
+    color: red;
+}
 .head h3{
     font-size:2.1em ;
     color: black;
@@ -65,7 +74,7 @@ header{
 }
 .search{
     display: flex;
-    width: 40vw;
+    width: 30vw;
     align-items: center;
     justify-content: flex-start;
     border-radius: 10px;
@@ -84,11 +93,49 @@ header{
 .search p {
     color: black;
     border-right: 1px solid black;
-    font-size: 15px;
+    font-size: 12px;
     padding-right: 10px;
     margin-left: 6px;
 }
 .search i {
     margin-left: 10px;
     padding-left: 10px;
+}
+.sec-1{
+    display: flex;
+    justify-content: center;
+    margin-bottom:13vh;
+}
+.box{
+    position: relative;
+    width: 300px;
+    margin:3px 25px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: rgb(243, 240, 240);
+    box-shadow: 0 1px 2px gray ;
+}
+.box img{
+    width: 100%;
+    border-radius: 15px;
+    z-index:-1 ;
+    border: 1px solid gray;
+}
+.white{
+    position: absolute;
+    bottom: 3px;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    height: 25%;
+    z-index: 2;
+    background-color: white;
+}
+.white p {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    color: rgb(56 , 56 , 56);
+    letter-spacing: 0.7px;
+    
 }

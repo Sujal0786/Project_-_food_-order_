@@ -150,6 +150,10 @@ header{
     letter-spacing: 0.7px;
     
 }
+.white p a {
+  text-decoration: none;
+    color: black;
+}
 section.app {
     margin: 5rem 9%;
     border-radius: 0.5rem;

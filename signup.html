@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-box">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">
+            Log In
+          </button>
+          <button type="button" class="toggle-btn" onclick="register()">
+            Register
+          </button>
+        </div>
+
+        <form id="login" class="input-group" onsubmit="loginForm(event)">
+          <input
+            type="email"
+            class="input-field"
+            id="emailNew"
+            placeholder="Enter your email"
+          />
+          <input
+            type="password"
+            class="input-field"
+            id="pwdNew"
+            placeholder="Enter your password"
+          />
+          <br />
+          <button type="submit" class="submit-btn" >
+            Login
+          </button>
+        </form>
+
+        <form id="register" class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            id="name"
+            placeholder="Enter your name"
+          />
+          <input
+            type="email"
+            class="input-field"
+            id="email"
+            placeholder="Enter your email"
+          />
+          <input
+            type="password"
+            class="input-field"
+            id="pwd"
+            placeholder="Enter your password"
+          />
+          <br />
+          <button type="submit" class="submit-btn" onclick="registration()">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function registration() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pwd = document.getElementById("pwd").value;
+
+        let record = new Array();
+        record = JSON.parse(localStorage.getItem("users"))
+          ? JSON.parse(localStorage.getItem("users"))
+          : [];
+        if (
+          record.some((v) => {
+            return v.email == email;
+          })
+        ) {
+          alert("Duplicate data");
+        } else {
+          record.push({
+            name: name,
+            email: email,
+            pwd: pwd,
+          });
+          localStorage.setItem("users", JSON.stringify(record));
+          alert("Registration sucessful");
+        }
+      }
+
+      function loginForm(e) {
+        e.preventDefault();
+        let email = document.getElementById("emailNew").value;
+        let pwd = document.getElementById("pwdNew").value;
+
+        let record = new Array();
+        record = JSON.parse(localStorage.getItem("users"))
+          ? JSON.parse(localStorage.getItem("users"))
+          : [];
+        if (
+          record.some((v) => {
+            return v.email == email && v.pwd == pwd;})) 
+            {
+              window.location.href = "index.html";
+            }
+        else {
+          alert("Login Fail");
+          console.log("not ");
+          window.location.href = "index.html";
+        }
+      }
+
+      let x = document.getElementById("login");
+      let y = document.getElementById("register");
+      let z = document.getElementById("btn");
+
+      function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+
+      function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+      }
+    </script>
+  </body>
+</html>

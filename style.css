@@ -53,7 +53,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 7vh;
+    margin-top: 3vh;
     align-items: center;
 
 }
@@ -73,8 +73,11 @@ header{
     font-size: 4rem;
     color: red;
 }
+.head img {
+  height: 25vh;   
+}
 .head h3{
-    font-size:2.1em ;
+    font-size:2.5em ;
     color: black;
     font-weight:lighter ;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -146,4 +149,80 @@ header{
     color: rgb(56 , 56 , 56);
     letter-spacing: 0.7px;
     
+}
+.white p a {
+  text-decoration: none;
+    color: black;
+}
+section.app {
+    margin: 5rem 9%;
+    border-radius: 0.5rem;
+    background-color: var(--yellow);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    padding: 22rem 0;
+  }
+  
+  section.app .image {
+    position: absolute;
+    left: 1%;
+  }
+  
+  section.app .image img {
+    width: 100%;
+  }
+  
+  section.app .content {
+    position: absolute;
+    right: 5%;
+    width: 45%;
+  }
+  
+  section.app .content h3 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+  
+  section.app .content p {
+    margin-bottom: 3rem;
+  }
+  
+  section.app .content .links img {
+    /* margin-right: 3rem; */
+    height: 15vh;
+  }
+  @media (max-width: 1200px) {
+  section.app .image {
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section.app .image {
+    display: none;
+  }
+
+  section.app {
+    grid-template-columns: 1fr;
+    padding: 20rem 0;
+    margin: 5rem 9%;
+  }
+
+  section.app .content {
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  section.app .content h3 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  section.app .content .links img {
+    width: rem;
+    margin-right: 0;
+  }
 }

@@ -42,7 +42,141 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
-
+const list = document.getElementById("list-container");
+const productList = [
+    {
+      id: 1,
+      src: "https://example.com/images/dim-sum.jpg",
+      hotelName: "Golden Dragon",
+      description: "Dim Sum, Spring Rolls, Tea",
+      rating: "4.8",
+      time: "20Min",
+      amt: "350",
+      offer: "15% Off | Use DIMSUM15",
+    },
+  
+    {
+      id: 2,
+      src: "https://example.com/images/sweet-sour-pork.jpg",
+      hotelName: "Golden Dragon",
+      description: "Sweet and Sour Pork, Rice, Soup",
+      rating: "4.7",
+      time: "25Min",
+      amt: "400",
+      offer: "20% Off | Use SWEET20",
+    },
+  
+    {
+      id: 3,
+      src: "https://example.com/images/kung-pao-chicken.jpg",
+      hotelName: "Golden Dragon",
+      description: "Kung Pao Chicken, Rice, Drink",
+      rating: "4.6",
+      time: "22Min",
+      amt: "380",
+      offer: "10% Off | Use KUNGP10",
+    },
+  
+    {
+      id: 4,
+      src: "https://example.com/images/peking-duck.jpg",
+      hotelName: "Golden Dragon",
+      description: "Peking Duck, Pancakes, Sauce",
+      rating: "4.9",
+      time: "30Min",
+      amt: "600",
+      offer: "20% Off | Use PEKING20",
+    },
+  
+    {
+      id: 5,
+      src: "https://example.com/images/mapo-tofu.jpg",
+      hotelName: "Golden Dragon",
+      description: "Mapo Tofu, Rice, Soup",
+      rating: "4.5",
+      time: "18Min",
+      amt: "320",
+      offer: "15% Off | Use TOFU15",
+    },
+  
+    {
+      id: 6,
+      src: "https://example.com/images/chow-mein.jpg",
+      hotelName: "Golden Dragon",
+      description: "Chow Mein, Spring Rolls, Drink",
+      rating: "4.7",
+      time: "20Min",
+      amt: "340",
+      offer: "25% Off | Use MEIN25",
+    },
+  
+    {
+      id: 7,
+      src: "https://example.com/images/egg-fried-rice.jpg",
+      hotelName: "Golden Dragon",
+      description: "Egg Fried Rice, Dumplings, Tea",
+      rating: "4.6",
+      time: "15Min",
+      amt: "300",
+      offer: "20% Off | Use EGGFRIED20",
+    },
+  
+    {
+      id: 8,
+      src: "https://example.com/images/hot-and-sour-soup.jpg",
+      hotelName: "Golden Dragon",
+      description: "Hot and Sour Soup, Spring Rolls",
+      rating: "4.5",
+      time: "12Min",
+      amt: "250",
+      offer: "10% Off | Use SOUP10",
+    },
+  
+    {
+      id: 9,
+      src: "https://example.com/images/orange-chicken.jpg",
+      hotelName: "Golden Dragon",
+      description: "Orange Chicken, Rice, Soup",
+      rating: "4.7",
+      time: "22Min",
+      amt: "370",
+      offer: "15% Off | Use ORANGE15",
+    },
+  
+    {
+      id: 10,
+      src: "https://example.com/images/fried-dumplings.jpg",
+      hotelName: "Golden Dragon",
+      description: "Fried Dumplings, Rice, Drink",
+      rating: "4.8",
+      time: "18Min",
+      amt: "280",
+      offer: "10% Off | Use DUMPLING10",
+    },
+  
+    {
+      id: 11,
+      src: "https://example.com/images/beef-broccoli.jpg",
+      hotelName: "Golden Dragon",
+      description: "Beef with Broccoli, Rice, Soup",
+      rating: "4.6",
+      time: "20Min",
+      amt: "350",
+      offer: "20% Off | Use BEEF20",
+    },
+  
+    {
+      id: 12,
+      src: "https://example.com/images/sesame-chicken.jpg",
+      hotelName: "Golden Dragon",
+      description: "Sesame Chicken, Rice, Drink",
+      rating: "4.7",
+      time: "22Min",
+      amt: "360",
+      offer: "25% Off | Use SESAME25",
+    },
+  ];
+  
 console.log(typeof id);
 function renderProdcuts() {
   productList.forEach((product) => {

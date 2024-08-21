@@ -1,110 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiggy</title>
-
+    <title>Bite-Buzz</title>
+    <link rel="icon" href="img/icon (1).jpeg">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Slab:wght@200;300;500&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-
-   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Slab:wght@200;300;500&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    
     <link rel="stylesheet" href="landing.css">
 
 </head>
+
 <body>
-    
-<header class="header">
-    <a href="#" class="logo">
-        
-        <img src="img/icon (1).jpeg" class="logo-img" alt="">
-    <nav class="navbar">
-        <a href="index.html" target="_blank">Home</a>
-        <a href="#">features</a>
-        <a href="#">products</a>
-        <a href="#">categories</a>
-        <a href="#">Offers</a>
-        <a href="#">Help</a>
-    </nav>
-    <div class="icons">
-        <div class="fas fa-bars" id="menu-btn"></div>
-        <div class="fas fa-search" id="search-btn"></div>
-        <div class="fas fa-shopping-cart " id="cart-btn"></div>
-          <div class="total-items-in-cart num-icon">0</div>
-          
-        
-       <!-- <a href="signup.html"> <div class="fas fa-user" id="login-btn"></div></a>s -->
-       <div class="fas fa-user" id="login-btn"></div>
-    </div>
-    
-<div class="shopping-cart" id="shopping-cart">
-    <div class="box"></div> 
-    <div class=" total subtotal">
-      Total (0 items): INR 0
-  </div>
-  <div class="checkout btn" ><a href="http://localhost:5000/">Checkout</a>
-      
-</div>
-</div>
 
+    <header class="header">
+        <a href="#" class="logo">
 
+            <img src="img/icon (1).jpeg" class="logo-img" alt="">
+            <nav class="navbar">
+                <a href="index.html" target="_blank">Home</a>
+                <a href="#">features</a>
+                <a href="#">products</a>
+                <a href="#">categories</a>
+                <a href="#">Offers</a>
+                <a href="#">Help</a>
+            </nav>
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart " id="cart-btn"></div>
+                <div class="total-items-in-cart num-icon">0</div>
+                <div class="fas fa-user" id="login-btn"></div>
+            </div>
+            <form action="" class="login-form">
+                <h3>login now</h3>
+                <input type="email" placeholder="your email" class="box" id="email">
+                <input type="password" placeholder="your password" class="box" id="password">
+                <p>forget your password <a href="#">click here</a></p>
+                <p>don't have account<a href="signup.html">create now</a></p>
+                <input type="submit" value="login now" class="btn" id="save" onsubmit="loginForm(event)">
+            </form>
+    </header>
+    <section class="home" id="home" style="overflow-x:auto;">
+        <div class="content">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/6e44fd7f1e5cd9967edfe47c10247671"
+                class="new" alt="">
+            <img src="img/ban2.webp" class="new" alt="">
+            <img src="img/ban3.jpg" class="new" alt="">
+            <img src="img/ban4.webp" class="new" alt="">
+        </div>
+    </section>
+    <section class="features" id="features">
+        <div class="filter">
+            <div class="filterLeft">
+                <div class="search-box">
+                    <input type="search" id="search-box" placeholder="search here..." onkeyup="searchProducts()">
+                    <label for="search-box" class="fas fa-search" id="searchBox"></label>
+                </div>
+            </div>
+            <div class="filterRight ">
+                <a href="#">Relevance</a>
+                <a href="#">Delivery Time</a>
+                <a href="#">Rating</a>
+                <a href="#">Cost:Low to High</a>
+                <a href="#">Cost:Hight to Low</a>
+                <a href="#">Filters</a>
 
+            </div>
+        </div>
 
-
- <form action="" class="login-form">
-    <h3>login now</h3>
-    <input type="email" placeholder="your email" class="box" id="email">
-    <input type="password" placeholder="your password" class="box" id="password">
-    <p>forget your password <a href="#">click here</a></p>
-    <p>don't have account<a href="signup.html">create now</a></p>
-    <input type="submit" value="login now" class="btn" id="save" onsubmit="loginForm(event)">
-</form> 
-</header>
-<section class="home" id="home" style="overflow-x:auto;">
-    <div class="content">
-        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/6e44fd7f1e5cd9967edfe47c10247671"
-            class="new" alt="">
-        <img src="img/ban2.webp" class="new" alt="">
-        <img src="img/ban3.jpg" class="new" alt="">
-        <img src="img/ban4.webp" class="new" alt="">
-    </div>
-</section>
-<section class="features" id="features">
-    <div class="filter">
-    <div class="filterLeft">
-      <div class="search-box">
-        <input type="search" id="search-box" placeholder="search here..." onkeyup="searchProducts()">
-        <label for="search-box" class="fas fa-search" id="searchBox" ></label>
-      </div>
-    </div>
-    <div class="filterRight ">
-        <a href="#">Relevance</a>
-        <a href="#">Delivery Time</a>
-        <a href="#">Rating</a>
-        <a href="#">Cost:Low to High</a>
-        <a href="#">Cost:Hight to Low</a>
-        <a href="#">Filters</a>
-        
-    </div>
-</div>
-
-<div class="list-container" id="list-container">
+        <div class="list-container" id="list-container">
 
             <div class="vid-list" data-name="p-1">
                 <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e0839ff574213e6f35b3899ebf1fc597"
-                    alt="res-img" class="img-class"></a>
+                    alt="res-img" class="img-class">
                 <div class="flex-div">
                     <div class="vid-info" id="item1">
-                        <a href="">Di Rasoi-Panjabi</a>
-                        <p class="title">North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="product2.html">Chinese WOK</a>
+                        <p class="title">South Indian</p>
+                        <p>Hakka Noodles , Veg Manchurian etc</p>
                         <div class="btns flex-div">
                             <span class="icon-star _537e4"></span>
                             <div class="rating">☆3.9</div>
@@ -116,18 +97,17 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="addToCart(item1)">Add to cart</button>
             </div>
-
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/qt2ojkafzprlgpdl4a4y"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="">Lapinoz - Pizza</a>
+                        <p class="title">Italian</p>
+                        <p>Margherita, Veg Extravaganza, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -139,15 +119,16 @@
                     </div>
                 </div>
             </div>
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/5116a385bac0548e06c33c08350fbf11"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="">The Belgian-Waffle</a>
+                        <p class="title">Desserts</p>
+                        <p>Classic Waffle, Chocolate Chip Waffle, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -159,15 +140,16 @@
                     </div>
                 </div>
             </div>
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e2ej0ob56z47oylq9mkb"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="">Barbeque</a>
+                        <p class="title">Barbecue</p>
+                        <p>Grilled Chicken, BBQ Paneer, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -179,16 +161,16 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/22/deff0d02-ca1d-4ef9-9d62-b0cbeabf33d3_296658.JPG"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="">BIG - BOWL</a>
+                        <p class="title">Asian</p>
+                        <p>Rice Bowl, Noodle Bowl, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -200,16 +182,16 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/283329f9-5ad8-4c46-9177-6b23b6eb2966_16051.JPG"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="">KFC</a>
+                        <p class="title">Fast Food</p>
+                        <p>Fried Chicken, Zinger Burger, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -221,16 +203,16 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/4a8bc67d-8fe4-44db-be5d-1477086cc52b_32399.JPG"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="product.html">MAC-DONALD</a>
+                        <p class="title">Fast Food</p>
+                        <p>Burgers, Fries, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -242,16 +224,16 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="vid-list">
                 <a href="video.html">
                     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/4ee8bc77-ca9f-41bd-a0f3-511c70902b91_78036.JPG"
                         class="img-class" alt="" /></a>
                 <div class="flex-div">
                     <div class="vid-info">
-                        <a href="">Bebe Di Rasoi-Panjabi</a>
-                        <p>North Indian,Panjabi,Biryani,kebabs</p>
-                        <p>Mughlai,Desserts,Beverages</p>
+                        <a href="">BURGER-KING</a>
+                        <p class="title">Fast Food</p>
+                        <p>Whopper, Chicken Fries, etc.</p>
                         <div class="btns flex-div">
                             <div class="rating">3.9</div>
                             <div class="time">40 Mins</div>
@@ -263,9 +245,13 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+    </section>
 
- <script src="JS\script.js"></script>
- <script src="JS\cart.js"></script>
+
+    <script src="JS\script.js"></script>
+    <script src="JS\cart.js"></script>
 </body>
+
 </html>

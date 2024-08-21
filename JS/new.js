@@ -42,6 +42,140 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
+const list = document.getElementById("list-container");
+const productList = [
+  {
+    id: 1,
+    src: "https://thumbs.dreamstime.com/z/moscow-russia-march-mcdonald-s-big-mac-hamburger-menu-french-fries-coca-cola-moscow-russia-march-mcdonald-s-big-mac-hamburger-112197884.jpg",
+    hotelName: "McDonald's",
+    description: "Big Mac, Fries, Drink",
+    rating: "4.5",
+    time: "15Min",
+    amt: "300",
+    offer: "20% Off | Use MAC20",
+  },
+
+  {
+    id: 2,
+    src: "https://th.bing.com/th/id/OIP.T-Ay448jC55UlUsWm7pAUAHaGI?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "McChicken, Fries, Drink",
+    rating: "4.3",
+    time: "18Min",
+    amt: "250",
+    offer: "25% Off | Use CHICK25",
+  },
+
+  {
+    id: 3,
+    src: "https://th.bing.com/th/id/OIP.8RlDaZIktO4qaGSTba37lwHaFJ?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Quarter Pounder, Fries, Drink",
+    rating: "4.4",
+    time: "20Min",
+    amt: "320",
+    offer: "15% Off | Use QTR15",
+  },
+
+  {
+    id: 4,
+    src: "https://th.bing.com/th/id/OIP.lChLrj1HY5_ksTKppyDXwgHaEJ?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Filet-O-Fish, Fries, Drink",
+    rating: "4.2",
+    time: "17Min",
+    amt: "280",
+    offer: "10% Off | Use FISH10",
+  },
+
+  {
+    id: 5,
+    src: "https://th.bing.com/th/id/OIP.a6yAJfyZuWPIFIxTLihgsgAAAA?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "McVeggie, Fries, Drink",
+    rating: "4.1",
+    time: "15Min",
+    amt: "240",
+    offer: "30% Off | Use VEG30",
+  },
+
+  {
+    id: 6,
+    src: "https://th.bing.com/th/id/OIP.k1SzQfq-5fGNOZLCJfStvQHaD_?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "McSpicy Paneer, Fries, Drink",
+    rating: "4.3",
+    time: "18Min",
+    amt: "260",
+    offer: "25% Off | Use SPICY25",
+  },
+
+  {
+    id: 7,
+    src: "https://th.bing.com/th/id/OIP.yFMeemeD3kZ3e5UjsTnJuQHaD_?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Egg McMuffin, Hash Browns, Coffee",
+    rating: "4.4",
+    time: "12Min",
+    amt: "220",
+    offer: "20% Off | Use MUFFIN20",
+  },
+
+  {
+    id: 8,
+    src: "https://th.bing.com/th/id/OIP.L4R8Ewd2sk7RbZsSsa6ErwAAAA?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Chicken McNuggets, Fries, Drink",
+    rating: "4.6",
+    time: "16Min",
+    amt: "270",
+    offer: "15% Off | Use NUGGET15",
+  },
+
+  {
+    id: 9,
+    src: "https://facts.net/wp-content/uploads/2023/06/Mcflurry-flavors.jpeg",
+    hotelName: "McDonald's",
+    description: "McFlurry, Fries, Drink",
+    rating: "4.5",
+    time: "10Min",
+    amt: "180",
+    offer: "10% Off | Use FLURRY10",
+  },
+
+  {
+    id: 10,
+    src: "https://th.bing.com/th/id/OIP.iAr0en1ecgRy-yv0GQF53wHaEs?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Happy Meal, Fries, Drink",
+    rating: "4.7",
+    time: "15Min",
+    amt: "200",
+    offer: "15% Off | Use HAPPY15",
+  },
+
+  {
+    id: 11,
+    src: "https://th.bing.com/th/id/OIP.ytgsiKHxJMfHmUsndZOt9QHaEK?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Cheeseburger, Fries, Drink",
+    rating: "4.3",
+    time: "14Min",
+    amt: "230",
+    offer: "20% Off | Use CHEESE20",
+  },
+
+  {
+    id: 12,
+    src: "https://th.bing.com/th/id/OIP.s8ck1xud-8mWnF-w6WxhjAHaEZ?rs=1&pid=ImgDetMain",
+    hotelName: "McDonald's",
+    description: "Double Cheeseburger, Fries, Drink",
+    rating: "4.6",
+    time: "18Min",
+    amt: "330",
+    offer: "25% Off | Use DOUBLE25",
+  },
+];
 
 console.log(typeof id);
 function renderProdcuts() {

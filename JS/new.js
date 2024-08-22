@@ -79,7 +79,7 @@ const productList = [
 
   {
     id: 4,
-    src: "https://th.bing.com/th/id/OIP.lChLrj1HY5_ksTKppyDXwgHaEJ?rs=1&pid=ImgDetMain",
+    src: "https://i.pinimg.com/564x/f7/78/3c/f7783c85ffee332c3944ba4defb6607c.jpg",
     hotelName: "McDonald's",
     description: "Filet-O-Fish, Fries, Drink",
     rating: "4.2",
@@ -101,7 +101,7 @@ const productList = [
 
   {
     id: 6,
-    src: "https://th.bing.com/th/id/OIP.k1SzQfq-5fGNOZLCJfStvQHaD_?rs=1&pid=ImgDetMain",
+    src: "https://i.pinimg.com/736x/af/db/a0/afdba0506263d9c33ef1defc93bff4cd.jpg",
     hotelName: "McDonald's",
     description: "McSpicy Paneer, Fries, Drink",
     rating: "4.3",
@@ -156,7 +156,7 @@ const productList = [
 
   {
     id: 11,
-    src: "https://th.bing.com/th/id/OIP.ytgsiKHxJMfHmUsndZOt9QHaEK?rs=1&pid=ImgDetMain",
+    src: "https://i.pinimg.com/564x/fd/0a/8f/fd0a8f6f5e405be6cf0b00265d9b9b43.jpg",
     hotelName: "McDonald's",
     description: "Cheeseburger, Fries, Drink",
     rating: "4.3",

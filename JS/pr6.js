@@ -42,7 +42,141 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
-
+const list = document.getElementById("list-container");
+const productList = [
+    {
+        id: 1,
+        src: "https://i.pinimg.com/564x/1d/d0/28/1dd028aff6ba1dfe903a74cd10027c04.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Spicy Noodles, Vegetables, and Meat",
+        rating: "4.8",
+        time: "20Min",
+        amt: "350",
+        offer: "15% Off | Use NOODLES15",
+      },
+      
+      {
+        id: 2,
+        src: "https://i.pinimg.com/564x/a2/b1/69/a2b1694904f33e8047ad7cf905c677d6.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Crispy Fried Chicken, Coleslaw, and Fries",
+        rating: "4.7",
+        time: "25Min",
+        amt: "400",
+        offer: "20% Off | Use CHICKEN20",
+      },
+      
+      {
+        id: 3,
+        src: "https://i.pinimg.com/564x/53/d7/d9/53d7d9a180e533b53be5bf9ea6f68631.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Grilled Fish, Rice, and Steamed Vegetables",
+        rating: "4.6",
+        time: "22Min",
+        amt: "380",
+        offer: "10% Off | Use FISH10",
+      },
+      
+      {
+        id: 4,
+        src: "https://i.pinimg.com/736x/bc/bc/fc/bcbcfcdfe33e514f2140dc69342c9c61.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Beef and Mushroom Stroganoff, Egg Noodles",
+        rating: "4.9",
+        time: "30Min",
+        amt: "600",
+        offer: "20% Off | Use STROGANOFF20",
+      },
+      
+      {
+        id: 5,
+        src: "https://i.pinimg.com/564x/10/41/f1/1041f159f07d6e610fdf64bb08df9ee3.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Veggie Burger, Fries, and Coleslaw",
+        rating: "4.5",
+        time: "18Min",
+        amt: "320",
+        offer: "15% Off | Use VEGGIE15",
+      },
+      
+      {
+        id: 6,
+        src: "https://i.pinimg.com/736x/e4/04/2c/e4042c433115f9b6821b707151f4673a.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Chicken Quesadilla, Sour Cream, and Salsa",
+        rating: "4.7",
+        time: "20Min",
+        amt: "340",
+        offer: "25% Off | Use QUESADILLA25",
+      },
+      
+      {
+        id: 7,
+        src: "https://i.pinimg.com/564x/79/19/7b/79197bf65655eaa588105607fd8c3cb5.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Egg and Cheese Omelette, Toast, and Hash Browns",
+        rating: "4.6",
+        time: "15Min",
+        amt: "300",
+        offer: "20% Off | Use OMELETTE20",
+      },
+      
+      {
+        id: 8,
+        src: "https://i.pinimg.com/564x/9b/2a/19/9b2a192201060e7362418b7117c31eef.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Tom Yum Soup, Spring Rolls, and Fried Wontons",
+        rating: "4.5",
+        time: "12Min",
+        amt: "250",
+        offer: "10% Off | Use SOUP10",
+      },
+      
+      {
+        id: 9,
+        src: "https://i.pinimg.com/564x/58/4f/43/584f430dd54f19fd2a36e1391fcf7507.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Grilled Chicken Caesar Salad, Croutons, and Parmesan",
+        rating: "4.7",
+        time: "22Min",
+        amt: "370",
+        offer: "15% Off | Use CAESAR15",
+      },
+      
+      {
+        id: 10,
+        src: "https://i.pinimg.com/736x/4d/10/a2/4d10a2e18b838baca23a1686aab4b710.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Fried Chicken Tenders, Dipping Sauce, and Coleslaw",
+        rating: "4.8",
+        time: "18Min",
+        amt: "280",
+        offer: "10% Off | Use TENDERS10",
+      },
+      
+      {
+        id: 11,
+        src: "https://i.pinimg.com/736x/33/cb/5a/33cb5a100c67e44b784cd242de34266f.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Beef and Broccoli Stir-Fry, Steamed Rice",
+        rating: "4.6",
+        time: "20Min",
+        amt: "350",
+        offer: "20% Off | Use STIRFRY20",
+      },
+      
+      {
+        id: 12,
+        src: "https://i.pinimg.com/564x/99/d1/89/99d18953c16e09bc88119e31aa4ee316.jpg",
+        hotelName: "BIG-BOWL",
+        description: "Sesame Chicken, Steamed Vegetables, and Fried Rice",
+        rating: "4.7",
+        time: "22Min",
+        amt: "360",
+        offer: "25% Off | Use SESAME25",
+      },
+  ];
+  
 console.log(typeof id);
 function renderProdcuts() {
   productList.forEach((product) => {

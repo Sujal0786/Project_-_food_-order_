@@ -42,7 +42,141 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
-
+const list = document.getElementById("list-container");
+const productList = [
+    {
+        id: 1,
+        src: "https://i.pinimg.com/564x/37/94/a8/3794a80d25c569c81ec1b06405841b36.jpg",
+        hotelName: "Barbecue",
+        description: "Grilled Chicken, BBQ Sauce, Coleslaw",
+        rating: "4.8",
+        time: "20Min",
+        amt: "350",
+        offer: "15% Off | Use BBQ15",
+      },
+      
+      {
+        id: 2,
+        src: "https://i.pinimg.com/736x/bd/7b/bc/bd7bbc03f3f68c36be263b76825dbdb7.jpg",
+        hotelName: "Barbecue",
+        description: "Pulled Pork, Baked Beans, Cornbread",
+        rating: "4.7",
+        time: "25Min",
+        amt: "400",
+        offer: "20% Off | Use PORK20",
+      },
+      
+      {
+        id: 3,
+        src: "https://i.pinimg.com/564x/45/ca/bc/45cabc24d5cb0d1aaf13e974ba8dec3a.jpg",
+        hotelName: "Barbecue",
+        description: "Ribs, Coleslaw, Baked Beans",
+        rating: "4.6",
+        time: "22Min",
+        amt: "380",
+        offer: "10% Off | Use RIBS10",
+      },
+      
+      {
+        id: 4,
+        src: "https://i.pinimg.com/564x/d8/39/bf/d839bf03a7c6d1dd72cc85cf6aac843d.jpg",
+        hotelName: "Barbecue",
+        description: "Brisket, BBQ Sauce, Grilled Vegetables",
+        rating: "4.9",
+        time: "30Min",
+        amt: "600",
+        offer: "20% Off | Use BRISKET20",
+      },
+      
+      {
+        id: 5,
+        src: "https://i.pinimg.com/564x/d5/e2/2f/d5e22f383e70fbc3397272642f2b2637.jpg",
+        hotelName: "Barbecue",
+        description: "Grilled Sausages, Peppers, Onions",
+        rating: "4.5",
+        time: "18Min",
+        amt: "320",
+        offer: "15% Off | Use SAUSAGE15",
+      },
+      
+      {
+        id: 6,
+        src: "https://i.pinimg.com/564x/ee/3f/42/ee3f4205fdef08f84eb756e4464ec257.jpg",
+        hotelName: "Barbecue",
+        description: "Burnt Ends, BBQ Sauce, Coleslaw",
+        rating: "4.7",
+        time: "20Min",
+        amt: "340",
+        offer: "25% Off | Use BURNT25",
+      },
+      
+      {
+        id: 7,
+        src: "https://i.pinimg.com/564x/77/73/4a/77734a785ba693c5a838f1835921f5e1.jpg",
+        hotelName: "Barbecue",
+        description: "Grilled Chicken, BBQ Sauce, Baked Beans",
+        rating: "4.6",
+        time: "15Min",
+        amt: "300",
+        offer: "20% Off | Use CHICKEN20",
+      },
+      
+      {
+        id: 8,
+        src: "https://i.pinimg.com/564x/e3/6e/18/e36e181542e12ed7b09204d8b49c540f.jpg",
+        hotelName: "Barbecue",
+        description: "Pulled Pork Sandwich, Coleslaw, Pickles",
+        rating: "4.5",
+        time: "12Min",
+        amt: "250",
+        offer: "10% Off | Use PORK10",
+      },
+      
+      {
+        id: 9,
+        src: "https://i.pinimg.com/564x/32/92/26/329226aefba8555f292a0479717429ae.jpg",
+        hotelName: "Barbecue",
+        description: "Ribs, BBQ Sauce, Grilled Vegetables",
+        rating: "4.7",
+        time: "22Min",
+        amt: "370",
+        offer: "15% Off | Use RIBS15",
+      },
+      
+      {
+        id: 10,
+        src: "https://i.pinimg.com/736x/8d/44/39/8d4439ba92c17a863dd0f6fe6d69b6e3.jpg",
+        hotelName: "Barbecue",
+        description: "Grilled Steak, Roasted Vegetables, Mashed Potatoes",
+        rating: "4.8",
+        time: "18Min",
+        amt: "280",
+        offer: "10% Off | Use STEAK10",
+      },
+      
+      {
+        id: 11,
+        src: "https://i.pinimg.com/564x/c8/d2/a4/c8d2a4ec2846594edc4085bef1cbfa34.jpg",
+        hotelName: "Barbecue",
+        description: "Smoked Brisket, BBQ Sauce, Coleslaw",
+        rating: "4.6",
+        time: "20Min",
+        amt: "350",
+        offer: "20% Off | Use BRISKET20",
+      },
+      
+      {
+        id: 12,
+        src: "https://i.pinimg.com/736x/1c/7e/1d/1c7e1dd7b147ab0c28bfa34fd8e7edfa.jpg",
+        hotelName: "Barbecue",
+        description: "Grilled Chicken Wings, BBQ Sauce, Celery Sticks",
+        rating: "4.7",
+        time: "22Min",
+        amt: "360",
+        offer: "25% Off | Use WINGS25",
+      },
+  ];
+  
 console.log(typeof id);
 function renderProdcuts() {
   productList.forEach((product) => {

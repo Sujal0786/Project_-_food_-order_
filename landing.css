@@ -957,6 +957,7 @@ a {
 .vid-list .img-class {
     width:100%;
     position: relative;
+height: 250px;
     /* border: 1px solid black; */
 }
 .vid-list .flex-div {

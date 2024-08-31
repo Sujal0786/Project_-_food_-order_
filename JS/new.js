@@ -177,6 +177,9 @@ const productList = [
   },
 ];
 
+
+
+
 console.log(typeof id);
 function renderProdcuts() {
   productList.forEach((product) => {
@@ -209,6 +212,7 @@ function renderProdcuts() {
        </div>`;
 
     list.appendChild(vidDiv);
+    
   });
 }
 

@@ -177,6 +177,7 @@ const productList = [
     },
   ];
   
+ 
 console.log(typeof id);
 function renderProdcuts() {
   productList.forEach((product) => {

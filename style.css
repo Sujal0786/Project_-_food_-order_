@@ -8,7 +8,7 @@ body{
 }
 header{
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     overflow: hidden;
     position: relative;
     object-fit: cover;
@@ -117,16 +117,16 @@ margin-top: 5vh;
 .sec-1{
     display: flex;
     justify-content: center;
-    margin-bottom:20vh;
+    margin-bottom:12vh;
 }
 .box{
     position: relative;
-    width: 300px;
-    margin:3px 25px;
-    overflow: hidden;
-    border-radius: 15px;
+    width: 305px;
+    margin: 3px 25px;
+    /* overflow: hidden; */
+    border-radius: 21px;
     background-color: rgb(243, 240, 240);
-    box-shadow: 0 1px 2px gray ;
+    box-shadow: 0 9px 12px gray;
 }
 .box img{
     width: 100%;
@@ -167,3 +167,109 @@ text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2em;
   }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content form {
+    margin-top: 10px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #232836;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    outline: none;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0171d3;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #0162b2;
+}
+
+.modal-content .forgot-password {
+    text-align: right;
+    display: block;
+    margin-bottom: 10px;
+    color: #0171d3;
+    text-decoration: none;
+}
+
+.modal-content .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.modal-content .sign-up {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.modal-content .sign-up a {
+    color: #0171d3;
+    text-decoration: none;
+}
+
+.modal-content .sign-up a:hover {
+    text-decoration: underline;
+}

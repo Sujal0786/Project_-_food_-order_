@@ -170,3 +170,38 @@ jQuery(window).on('load', function () {
 
     }
 });
+
+
+    // Get modal element
+    var modal;
+
+    // Get open modal button
+    var loginBtn;
+
+    // Get close button
+    var closeBtn;
+
+    // Initialize after the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      modal = document.getElementById("login-modal");
+      loginBtn = document.getElementById("login-btn"); // Corrected ID
+      closeBtn = document.getElementsByClassName("close")[0];
+
+      // Listen for open click
+      loginBtn.addEventListener("click", function() {
+        modal.style.display = "block";
+      });
+
+      // Listen for close click
+      closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+
+      // Close modal if outside click
+      window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  

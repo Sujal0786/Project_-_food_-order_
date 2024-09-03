@@ -14,8 +14,7 @@
    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://kit.fontawesome.com/27e6a2b710.js" crossorigin="anonymous"></script>
-</head>
-
+  </head>
 <body>
   <header>
     <div class="nav">
@@ -23,30 +22,56 @@
         <img src="img/icon (1).jpeg" alt="">
       </div>
       <ul class="nav-br">
-        <li>Helpline</li>
-        <li>Services</li>
-        <li>Order Tracking</li>
-        <li>Login</li>
+        <li class="nav-item">
+          <a href="#Helpline" class="navbar-link">Helpline</a>
+        </li>
+        <li class="nav-item">
+          <a href="#Services" class="navbar-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="#blog" class="navbar-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="navbar-link" id="login-btn">Login</a> 
+        </li>
       </ul>
     </div>
     <div class="head">
-      <!-- <h1 class="lg-centre">BITESBUZZ</h1> -->
       <img src="img/icon (1).jpeg">
-      <h3>Discover the best foood & drinks near you</h3>
+      <h3>Discover the best food & drinks near you</h3>
       <div class="search">
         <i class="fa-solid fa-location-dot"></i>
         <p>other</p>
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" name="" id="" placeholder="Search  for the Restaurant ......">
-
+        <input type="text" name="" id="" placeholder="Search for the Restaurant ......">
       </div>
     </div>
     <div class="header-img">
       <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg" alt="">
-
     </div>
   </header>
-  <section class="sec-1">
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Log in</button>
+        <div class="text-right mb-4">
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div class="sign-up">
+          <p>or <a href="#">sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <section class="sec-1" id="Services">
     <div class="box">
       <div class="white">
         <li class="nav-item">
@@ -119,7 +144,7 @@
 
     
 
-    <section class="book-table section bg-light">
+    <section class="book-table section bg-light" id="Helpline">
         <div class="book-table-shape">
             <img src="assets/images/table-leaves-shape.png" alt="">
         </div>

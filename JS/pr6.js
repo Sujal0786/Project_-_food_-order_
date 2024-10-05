@@ -329,21 +329,22 @@ function changeNumberOfUnits(action, id) {
 
 
 
- function searchProducts() {
-  let input = document.getElementById("search-box");
-  let searchValue = input.value.toUpperCase();
-  let product = document.getElementById("list-container");
-  //product.innerHTML="";
-  let card = product.querySelectorAll(".vid-list");
-  let vidDiv=document.getElementsByClassName('cardDiv');
+function searchProducts() {
+  let input = document.getElementById("search-box").value.toUpperCase(); // Get search input
+  let productList = document.getElementById("list-container");
+  let cards = productList.getElementsByClassName("cardDiv"); // Select the product cards
 
-  for (i = 0; i < card.length; i++) {
-    txtValue = card[i].textContent || card[i].innerText;
-    console.log(txtValue);
-    if (txtValue.toUpperCase().indexOf(searchValue) > -1) {
-      vidDiv[i].style.display = "block";
+  // Loop through all the product cards
+  for (let i = 0; i < cards.length; i++) {
+    let descriptionElement = cards[i].querySelector("p"); // The element that holds the description (first <p> tag in the card)
+    let description = descriptionElement ? descriptionElement.innerText.toUpperCase() : ""; // Get description and convert to uppercase
+
+    // If the description contains the search input, show the card, otherwise hide it
+    if (description.indexOf(input) > -1) {
+      cards[i].style.display = "block";  // Show the card if description matches
     } else {
-      vidDiv[i].style.display = "none";
+      cards[i].style.display = "none";   // Hide the card if description doesn't match
     }
   }
-}   
+}
+

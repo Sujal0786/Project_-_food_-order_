@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Welcome</h2>
+            <h3>Hi, <span id="name"></span></h3>
+            <h3>Email: <span id="email"></span></h3>
+            <div class="text-center">
+                <button type="button" onclick="logout()" class="btn btn-primary">Logout</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Ensure that the content is updated after the page is loaded
+        window.onload = function() {
+            document.getElementById('name').innerText = localStorage.getItem('name') || 'Guest';
+            document.getElementById('email').innerText = localStorage.getItem('email') || 'No email available';
+        };
+    
+        function logout() {
+            // Clear user data and redirect to login page
+            localStorage.removeItem('name');
+            localStorage.removeItem('email');
+            window.location.href = "login.html";
+        }
+    </script>
+    
+</body>
+</html>

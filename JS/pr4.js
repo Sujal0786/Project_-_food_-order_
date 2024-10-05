@@ -1,3 +1,16 @@
+
+   // Ensure that the content is updated after the page is loaded
+   window.onload = function() {
+    document.getElementById('name').innerText = localStorage.getItem('name') || 'Guest';
+    document.getElementById('email').innerText = localStorage.getItem('email') || 'No email available';
+};
+
+function logout() {
+    // Clear user data and redirect to login page
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    window.location.href = "login.html";
+}
 let searchForm = document.querySelector(".search-form");
 
 document.querySelector("#search-btn").onclick = () => {
@@ -346,5 +359,4 @@ function searchProducts() {
       }
     }
   }
-  
   

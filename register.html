@@ -3,38 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Register</title>
+    <script src="https://kit.fontawesome.com/27e6a2b710.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h2>Registration form</h2>
-
-            <form action="#">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" />
+    <div class="overlay">
+        <form onsubmit="event.preventDefault(); register();">
+            <div class="con">
+                <header class="head-form">
+                    <h2>Register</h2>
+                    <p>Register here using your name, email, and password</p>
+                </header>
+                <br>
+                <div class="field-set">
+                    <!-- Name -->
+                    <span class="input-item">
+                        <i class="fa fa-user-circle"></i>
+                    </span>
+                    <input class="form-input" id="name" type="text" placeholder="Name" required>
+                    <br>
+                    
+                    <!-- Email -->
+                    <span class="input-item">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                    <input class="form-input" id="email" type="email" placeholder="Email" required>
+                    <br>
+    
+                    <!-- Password -->
+                    <span class="input-item">
+                        <i class="fa fa-key"></i>
+                    </span>
+                    <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
+                    
+                    <span>
+                        <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                    </span>
+                    <br>
+                    
+                    <!-- Register Button -->
+                    <button type="submit" class="log-in">Register</button>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
+    
+                <div class="other">
+                    <!-- Other buttons -->
+                    <button class="btn submits frgt-pass">Forgot Password</button>
+                    <button class="btn submits sign-up" onclick="login()">Log In
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" />
-                </div>
-                <div class="text-center">
-                    <button type="button" onclick="register()" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-</body>
     
     <script>
         function register() {
@@ -62,7 +84,63 @@
                 alert(err.message);
             });
         }
+        function login(){
+            window.location.href = 'login.html';
+        }
     </script>
+    
+    <!-- <div class="container">
+        <div class="card">
+            <h2>Registration form</h2>
+
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" />
+                </div>
+                <div class="text-center">
+                    <button type="button" onclick="register()" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div> -->
+
+    
+    <!-- <script>
+        function register() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('pwd').value;
+    
+            fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, password })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(err => { throw new Error(err); });
+                }
+                return response.text();
+            })
+            .then(data => {
+                alert(data);
+            })
+            .catch(err => {
+                alert(err.message);
+            });
+        }
+    </script> -->
     
 </body>
 </html>

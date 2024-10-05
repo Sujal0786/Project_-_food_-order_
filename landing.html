@@ -38,12 +38,16 @@
                 <div class="fas fa-user" id="login-btn"></div>
             </div>
             <form action="" class="login-form">
-                <h3>login now</h3>
-                <input type="email" placeholder="your email" class="box" id="email">
-                <input type="password" placeholder="your password" class="box" id="password">
-                <p>forget your password <a href="#">click here</a></p>
-                <p>don't have account<a href="signup.html">create now</a></p>
-                <input type="submit" value="login now" class="btn" id="save" onsubmit="loginForm(event)">
+                <div class="container">
+                    <div class="card">
+                        <h2>Welcome</h2>
+                        <h3>Hi, <span id="name"></span></h3>
+                        <h3>Email: <span id="email"></span></h3>
+                        <div class="text-center">
+                            <button type="button" onclick="logout()" class="btn btn-primary">Logout</button>
+                        </div>
+                    </div>
+                </div>
             </form>
     </header>
 

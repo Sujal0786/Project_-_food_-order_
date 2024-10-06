@@ -48,12 +48,12 @@ document.querySelector("#menu-btn").onclick = () => {
   loginForm.classList.remove("active");
 };
 
-window.onscroll = () => {
-  searchForm.classList.remove("active");
-  shoppingCart.classList.remove("active");
-  loginForm.classList.remove("active");
-  navbar.classList.remove("active");
-};
+// window.onscroll = () => {
+//   // searchForm.classList.remove("active");
+//   shoppingCart.classList.remove("active");
+//   loginForm.classList.remove("active");
+//   navbar.classList.remove("active");
+// };
 
 const list = document.getElementById("list-container");
 const productList = [
@@ -182,108 +182,108 @@ const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 
 const cartItem = document.getElementById("shopping-cart");
 
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
-updateCart();
+// let cart = JSON.parse(localStorage.getItem("CART")) || [];
+// updateCart();
 
-// ADD TO CART
-function addToCart(id) {
-  // check if prodcut already exist in cart
-  if (cart.some((item) => item.id === id)) {
-    changeNumberOfUnits("plus", id);
-  } else {
-    const item = productList.find((product) => product.id === id);
-    console.log(item);
-    cart.push({
-      ...item,
-      numberOfUnits: 1,
-    });
-  }
+// // ADD TO CART
+// function addToCart(id) {
+//   // check if prodcut already exist in cart
+//   if (cart.some((item) => item.id === id)) {
+//     changeNumberOfUnits("plus", id);
+//   } else {
+//     const item = productList.find((product) => product.id === id);
+//     console.log(item);
+//     cart.push({
+//       ...item,
+//       numberOfUnits: 1,
+//     });
+//   }
 
-  updateCart();
-}
+//   updateCart();
+// }
 
-// update cart
-function updateCart() {
-  renderCartItems();
-  renderSubtotal();
+// // update cart
+// function updateCart() {
+//   renderCartItems();
+//   renderSubtotal();
 
-  // save cart to local storage
-  localStorage.setItem("CART", JSON.stringify(cart));
-}
+//   // save cart to local storage
+//   localStorage.setItem("CART", JSON.stringify(cart));
+// }
 
-// calculate and render subtotal
-function renderSubtotal() {
-  let totalPrice = 0,
-    totalItems = 0;
+// // calculate and render subtotal
+// function renderSubtotal() {
+//   let totalPrice = 0,
+//     totalItems = 0;
 
-  cart.forEach((item) => {
-    totalPrice += item.amt * item.numberOfUnits;
-    totalItems += item.numberOfUnits;
-  });
+//   cart.forEach((item) => {
+//     totalPrice += item.amt * item.numberOfUnits;
+//     totalItems += item.numberOfUnits;
+//   });
 
-  subtotalEl.innerHTML = `Total (${totalItems} items): INR ${totalPrice}`;
-  totalItemsInCartEl.innerHTML = totalItems;
-}
+//   subtotalEl.innerHTML = `Total (${totalItems} items): INR ${totalPrice}`;
+//   totalItemsInCartEl.innerHTML = totalItems;
+// }
 
-function renderCartItems() {
-  cartItemsEl.innerHTML = ""; // clear cart element
-  cart.forEach((item) => {
-    cartItemsEl.innerHTML += `<table>
-        <tr>
-          <th>Item</th>
-          <th>Description</th>
-          <th>Quantity</th>
-          <th>Remove</th>
-        </tr>
-        <tr>
-          <td><div class="img"><img src="${item.src}" alt=""></div></td>
-          <td><div class="cart-content">
-                <div class="des">
-                        ${item.description}
-                    </div>
-                    <span class="price">Amount:Rs.${item.amt}</span></div>
-                 </td>
-          <td><div class="units">
-                    <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-                    <div class="number">${item.numberOfUnits}</div>
-                    <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
-                </div></td>
-                <td><i class="fas fa-trash" onclick="removeItemFromCart(${item.id})"></i></td>
-        </tr>
-        </table>
+// function renderCartItems() {
+//   cartItemsEl.innerHTML = ""; // clear cart element
+//   cart.forEach((item) => {
+//     cartItemsEl.innerHTML += `<table>
+//         <tr>
+//           <th>Item</th>
+//           <th>Description</th>
+//           <th>Quantity</th>
+//           <th>Remove</th>
+//         </tr>
+//         <tr>
+//           <td><div class="img"><img src="${item.src}" alt=""></div></td>
+//           <td><div class="cart-content">
+//                 <div class="des">
+//                         ${item.description}
+//                     </div>
+//                     <span class="price">Amount:Rs.${item.amt}</span></div>
+//                  </td>
+//           <td><div class="units">
+//                     <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
+//                     <div class="number">${item.numberOfUnits}</div>
+//                     <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
+//                 </div></td>
+//                 <td><i class="fas fa-trash" onclick="removeItemFromCart(${item.id})"></i></td>
+//         </tr>
+//         </table>
         
-        `;
-  });
-}
+//         `;
+//   });
+// }
 
-// remove item from cart
-function removeItemFromCart(id) {
-  cart = cart.filter((item) => item.id !== id);
+// // remove item from cart
+// function removeItemFromCart(id) {
+//   cart = cart.filter((item) => item.id !== id);
 
-  updateCart();
-}
+//   updateCart();
+// }
 
-// change number of units for an item
-function changeNumberOfUnits(action, id) {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.numberOfUnits;
+// // change number of units for an item
+// function changeNumberOfUnits(action, id) {
+//   cart = cart.map((item) => {
+//     let numberOfUnits = item.numberOfUnits;
 
-    if (item.id === id) {
-      if (action === "minus" && numberOfUnits > 1) {
-        numberOfUnits--;
-      } else if (action === "plus") {
-        numberOfUnits++;
-      }
-    }
+//     if (item.id === id) {
+//       if (action === "minus" && numberOfUnits > 1) {
+//         numberOfUnits--;
+//       } else if (action === "plus") {
+//         numberOfUnits++;
+//       }
+//     }
 
-    return {
-      ...item,
-      numberOfUnits,
-    };
-  });
+//     return {
+//       ...item,
+//       numberOfUnits,
+//     };
+//   });
 
-  updateCart();
-}
+//   updateCart();
+// }
 
 
 

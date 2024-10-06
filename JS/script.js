@@ -2,7 +2,21 @@
   window.onload = function() {
     document.getElementById('name').innerText = localStorage.getItem('name') || 'Guest';
     document.getElementById('email').innerText = localStorage.getItem('email') || 'No email available';
+    
+    // Add event listeners to the filter buttons
+    const filterLinks = document.querySelectorAll('.filterRight a');
+    filterLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            randomizeProducts();
+        });
+    });
 };
+
+ // Ensure to call the initial render function to display products on page load
+
+// ... (rest of your existing code)
+
 
 function logout() {
     // Clear user data and redirect to login page
@@ -307,3 +321,40 @@ function searchProducts() {
 }
 
 
+function randomizeProducts() {
+  // Shuffle the productList array
+  const shuffledProducts = productList.sort(() => Math.random() - 0.5);
+  
+  // Clear existing products from the list
+  list.innerHTML = '';
+  
+  // Render the shuffled products
+  shuffledProducts.forEach((product) => {
+      const vidDiv = document.createElement("div");
+      vidDiv.className = 'cardDiv';
+
+      vidDiv.innerHTML = `<div class="vid-list" data-name="p-1">
+           <img src="${product.src}" class="img-class" alt="Product Image">
+           
+       <div class="flex-div">
+         <div class="vid-info">
+           <a href="${product.href}" class="title">${product.name}</a>
+           <p>${product.description}</p>
+           <p>Desserts, Beverages and more...</p>
+           <div class="btns flex-div">
+               <div class="rating"> <span class="fas fa-star">${product.rating}</span> </div> 
+               <div class="time">${product.time}</div> 
+               <div class="amt">RS.${product.amt}</div>
+           </div>
+           <div class="offers">
+           <p>${product.offer}</p>
+       </div>
+         </div>
+       </div>
+     </div>`;
+
+      list.appendChild(vidDiv);
+  });
+}
+
+renderProdcuts();

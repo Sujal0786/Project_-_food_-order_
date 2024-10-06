@@ -2,6 +2,14 @@
 window.onload = function() {
   document.getElementById('name').innerText = localStorage.getItem('name') || 'Guest';
   document.getElementById('email').innerText = localStorage.getItem('email') || 'No email available';
+  // Add event listeners to the filter buttons
+  const filterLinks = document.querySelectorAll('.filterRight a');
+  filterLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default anchor behavior
+          randomizeProducts();
+      });
+  });
 };
 
 function logout() {
@@ -204,7 +212,7 @@ function renderProdcuts() {
              /></a>
          <div class="flex-div">
            <div class="vid-info">
-             <a href="" class="title">${product.hotelName}</a>
+             <a href="" class="title">${product.description}</a>
              <p>${product.description}</p>
              <p>Desserts,Beverages and lot more...</p>
              <div class="btns flex-div">
@@ -362,3 +370,42 @@ function searchProducts() {
 }
 
  
+
+function randomizeProducts() {
+  // Shuffle the productList array
+  const shuffledProducts = productList.sort(() => Math.random() - 0.5);
+  
+  // Clear existing products from the list
+  list.innerHTML = '';
+  
+  // Render the shuffled products
+  shuffledProducts.forEach((product) => {
+      const vidDiv = document.createElement("div");
+      vidDiv.className = 'cardDiv';
+
+      vidDiv.innerHTML = `<div class="vid-list" data-name="p-1">
+           <img src="${product.src}" class="img-class" alt="Product Image">
+           
+       <div class="flex-div">
+         <div class="vid-info">
+           <a href="${product.href}" class="title">${product.description}</a>
+           <p>${product.description}</p>
+           <p>Desserts, Beverages and more...</p>
+           <div class="btns flex-div">
+               <div class="rating"> <span class="fas fa-star">${product.rating}</span> </div> 
+               <div class="time">${product.time}</div> 
+               <div class="amt">RS.${product.amt}</div>
+           </div>
+           <div class="offers">
+           <p>${product.offer}</p>
+           <button id="add" class="button" onclick="addToCart(${product.id})">Add to cart</button>
+       </div>
+         </div>
+       </div>
+     </div>`;
+
+      list.appendChild(vidDiv);
+  });
+}
+
+renderProdcuts();

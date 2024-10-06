@@ -206,7 +206,7 @@ function renderProdcuts() {
              /></a>
          <div class="flex-div">
            <div class="vid-info">
-             <a href="" class="title">${product.hotelName}</a>
+             <a href="" class="title">${product.description}</a>
              <p>${product.description}</p>
              <p>Desserts,Beverages and lot more...</p>
              <div class="btns flex-div">
